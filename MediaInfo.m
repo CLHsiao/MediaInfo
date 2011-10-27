@@ -158,7 +158,8 @@ _err:
 				sprintf(szMsg, "CF Card   >>> CF Card is not plugin\n");
 			//[ListResult insertText:@"11 \n"];
 			//[ListResult insertText:@"11 \n"];
-			[ListResult insertText:[[NSString alloc] initWithCString:szMsg]];
+            [ListResult insertText:[NSString stringWithUTF8String:szMsg]];
+			//[ListResult insertText:[[NSString alloc] initWithCString:szMsg]];
 			break;
 		
 		case SD1_INTERFACE_READ:
@@ -275,12 +276,16 @@ _err:
 				}
 				[ListResult insertText:@"\n"];
 				[ListResult insertText:@"\n"];
-				[ListResult insertText:[[NSString alloc] initWithCString:szMsg]];
+                [ListResult insertText:[NSString stringWithUTF8String:szMsg]];
+				//[ListResult insertText:[[NSString alloc] initWithCString:szMsg]];
 				if(bFindSD)
 				{
-					[ListResult insertText:[[NSString alloc] initWithCString:szCurrent]];
-					[ListResult insertText:[[NSString alloc] initWithCString:szCommandDelay]];
-					[ListResult insertText:[[NSString alloc] initWithCString:szUHSControl]];
+                    [ListResult insertText:[NSString stringWithUTF8String:szCurrent]];
+                    [ListResult insertText:[NSString stringWithUTF8String:szCommandDelay]];
+                    [ListResult insertText:[NSString stringWithUTF8String:szUHSControl]];
+					//[ListResult insertText:[[NSString alloc] initWithCString:szCurrent]];
+					//[ListResult insertText:[[NSString alloc] initWithCString:szCommandDelay]];
+					//[ListResult insertText:[[NSString alloc] initWithCString:szUHSControl]];
 				}
 				break;
 				
@@ -414,12 +419,16 @@ _err:
 			
 			[ListResult insertText:@"\n"];
 			[ListResult insertText:@"\n"];
-			[ListResult insertText:[[NSString alloc] initWithCString:szMsg]];
+            [ListResult insertText:[NSString stringWithUTF8String:szMsg]];
+			//[ListResult insertText:[[NSString alloc] initWithCString:szMsg]];
 			if(bFindSD)
 			{
-				[ListResult insertText:[[NSString alloc] initWithCString:szCurrent]];
-				[ListResult insertText:[[NSString alloc] initWithCString:szCommandDelay]];
-				[ListResult insertText:[[NSString alloc] initWithCString:szUHSControl]];
+                [ListResult insertText:[NSString stringWithUTF8String:szCurrent]];
+                [ListResult insertText:[NSString stringWithUTF8String:szCommandDelay]];
+                [ListResult insertText:[NSString stringWithUTF8String:szUHSControl]];
+				//[ListResult insertText:[[NSString alloc] initWithCString:szCurrent]];
+				//[ListResult insertText:[[NSString alloc] initWithCString:szCommandDelay]];
+				//[ListResult insertText:[[NSString alloc] initWithCString:szUHSControl]];
 			}
 			break;
 			
@@ -434,7 +443,8 @@ _err:
 				sprintf(szMsg, "MS1       >>> MS Card is not plug in.\n");
 			[ListResult insertText:@"\n"];
 			[ListResult insertText:@"\n"];
-			[ListResult insertText:[[NSString alloc] initWithCString:szMsg]];
+            [ListResult insertText:[NSString stringWithUTF8String:szMsg]];
+			//[ListResult insertText:[[NSString alloc] initWithCString:szMsg]];
 			break;
 		
 		case SD2_INTERFACE_READ:
@@ -452,7 +462,8 @@ _err:
 				sprintf(szMsg, "SD2       >>> SD Card is not plug in.\n");
 			[ListResult insertText:@"\n"];
 			[ListResult insertText:@"\n"];
-			[ListResult insertText:[[NSString alloc] initWithCString:szMsg]];
+            [ListResult insertText:[NSString stringWithUTF8String:szMsg]];
+			//[ListResult insertText:[[NSString alloc] initWithCString:szMsg]];
 			break;
 			
 		case MS2_INTERFACE_READ:
@@ -466,7 +477,8 @@ _err:
 				sprintf(szMsg, "MS2       >>> MS Card is not plug in.\n");
 			[ListResult insertText:@"\n"];
 			[ListResult insertText:@"\n"];
-			[ListResult insertText:[[NSString alloc] initWithCString:szMsg]];
+            [ListResult insertText:[NSString stringWithUTF8String:szMsg]];
+			//[ListResult insertText:[[NSString alloc] initWithCString:szMsg]];
 			break;
 	}
 	//[ListResult insertText:@"11 \n"];
@@ -761,37 +773,44 @@ _err:
 						[ListResult insertText:@"*** Set Clock Rate & Current Limitation for SD ***\n"];
 						
 						sprintf(szMsg, "          -> Max SD card clock rate:    %s\n", szClockRate);
-						[ListResult insertText:[[NSString alloc] initWithCString:szMsg]];
+                        [ListResult insertText:[NSString stringWithUTF8String:szMsg]];
+						//[ListResult insertText:[[NSString alloc] initWithCString:szMsg]];
 						
 						memset(szMsg, 0, sizeof(szMsg));
 						sprintf(szMsg, "          -> SD card Current Limitation:    %s\n", szCurrentLimitation);
-						[ListResult insertText:[[NSString alloc] initWithCString:szMsg]];
+                        [ListResult insertText:[NSString stringWithUTF8String:szMsg]];
+						//[ListResult insertText:[[NSString alloc] initWithCString:szMsg]];
 						
 						[ListResult insertText:@"*** Set SD UHS-I card voltage signal level ***\n"];
 							
 						memset(szMsg, 0, sizeof(szMsg));
 						sprintf(szMsg, "          -> Switch to %s\n", szVoltage);
-						[ListResult insertText:[[NSString alloc] initWithCString:szMsg]];
+                        [ListResult insertText:[NSString stringWithUTF8String:szMsg]];
+						//[ListResult insertText:[[NSString alloc] initWithCString:szMsg]];
 						
 						[ListResult insertText:@"*** SSC Control ***\n"];
 
 						memset(szMsg, 0, sizeof(szMsg));
 						sprintf(szMsg, "          -> %s\n", szSSCControl);
-						[ListResult insertText:[[NSString alloc] initWithCString:szMsg]];
+                        [ListResult insertText:[NSString stringWithUTF8String:szMsg]];
+						//[ListResult insertText:[[NSString alloc] initWithCString:szMsg]];
 						
 												
 						[ListResult insertText:@"*** SD command delay ***\n"];
 						//sprintf(szMsg, "          -> OUT = %d, IN = %d\n", CurSetting.nIndexOfWriteCommandDelay, CurSetting.nIndexOfReadCommandDelay);
 						sprintf(szMsg, "          -> %d\n", CurSetting.nIndexOfWriteCommandDelay);
-						[ListResult insertText:[[NSString alloc] initWithCString:szMsg]];
+                        [ListResult insertText:[NSString stringWithUTF8String:szMsg]];
+						//[ListResult insertText:[[NSString alloc] initWithCString:szMsg]];
 						
 						[ListResult insertText:@"*** SD Data out delay ***\n"];
 						sprintf(szMsg, "          -> %d\n", CurSetting.nIndexOfDataDelay);
-						[ListResult insertText:[[NSString alloc] initWithCString:szMsg]];
+                        [ListResult insertText:[NSString stringWithUTF8String:szMsg]];
+						//[ListResult insertText:[[NSString alloc] initWithCString:szMsg]];
 						
 						[ListResult insertText:@"*** UHS Control ***\n"];
 						sprintf(szMsg, "          -> %d\n", CurSetting.nIndexOfUHSControl);
-						[ListResult insertText:[[NSString alloc] initWithCString:szMsg]];
+                        [ListResult insertText:[NSString stringWithUTF8String:szMsg]];
+						//[ListResult insertText:[[NSString alloc] initWithCString:szMsg]];
 						
 						[ListResult insertText:@"\n\n"];
 						[ListResult insertText:@"Success!!\n"];
@@ -829,11 +848,13 @@ _err:
 						[ListResult insertText:@"*** Set Clock Rate & Current Limitation for SD ***\n"];
 						
 						sprintf(szMsg, "          -> Max SD card clock rate:    %s\n", szClockRate);
-						[ListResult insertText:[[NSString alloc] initWithCString:szMsg]];
+                        [ListResult insertText:[NSString stringWithUTF8String:szMsg]];
+						//[ListResult insertText:[[NSString alloc] initWithCString:szMsg]];
 						
 						memset(szMsg, 0, sizeof(szMsg));
 						sprintf(szMsg, "          -> SD card Current Limitation:    %s\n", szCurrentLimitation);
-						[ListResult insertText:[[NSString alloc] initWithCString:szMsg]];
+                        [ListResult insertText:[NSString stringWithUTF8String:szMsg]];
+						//[ListResult insertText:[[NSString alloc] initWithCString:szMsg]];
 						
 						[ListResult insertText:@"\n\n"];
 						[ListResult insertText:@"Success!!\n"];

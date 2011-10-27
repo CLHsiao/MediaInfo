@@ -667,7 +667,7 @@ _err:
 			if(nType == 0)
 				sprintf(szSPIType, "%s%d]", szTmpSPIType, i);	
 			else if(nType == 1)
-				sprintf(szSPIType, g_szSPIType);
+				strcpy(szSPIType, g_szSPIType);
 			
 			
 			do
