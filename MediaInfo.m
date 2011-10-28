@@ -25,7 +25,7 @@
 	[comboSelSDDataOutDelay selectItemAtIndex:0];
 	[comboSelSDDataOutDelay setObjectValue:[comboSelSDDataOutDelay objectValueOfSelectedItem]];
 	
-	//[combleSelClockRate addItemWithObjectValue:@"111111"];
+	////[combleSelClockRate addItemWithObjectValue:@"111111"];
 	//[combleSelClockRate addItemWithObjectValue:@"222222"];
 	
 	//[radioVoltageOne setEnabled:NO];
